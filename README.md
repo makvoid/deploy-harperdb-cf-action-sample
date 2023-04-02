@@ -1,4 +1,4 @@
-# deploy-harperdb-cf-action-sample
+# HarperDB Custom Functions Deployment Action Sample
 Sample repository showing how to use the HarperDB Custom Functions Deployment Action.
 
 ## Requirements
