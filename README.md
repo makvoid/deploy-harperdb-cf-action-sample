@@ -9,7 +9,14 @@ Sample repository showing how to use the HarperDB Custom Functions Deployment Ac
     4. HDB_PROJECT
 2. Change the default values if needed (Custom Functions directory, cert checking)
 
-You can optionally set the `HDB_ENDPOINT` and `HDB_PROJECT` secrets as variables instead, but this is up to you if you want them visible or not.
+You can optionally set the `HDB_ENDPOINT` and `HDB_PROJECT` secrets as variables instead, but this is up to you if you want them visible or not. Just be sure to swap the object from `secrets` to `vars` in the deployment file:
+
+```yml
+admin_password: ${{ secrets.HDB_ADMIN_PASSWORD }} # Using the secrets object
+hdb_endpoint: ${{ vars.HDB_ENDPOINT }} # Using the vars object
+project_name: ${{ vars.HDB_PROJECT }}
+```
+
 ## Usage
 Check out the [example deployment file](https://github.com/makvoid/deploy-harperdb-cf-action-sample/blob/main/.github/workflows/deployment.yml) within the workflows directory. By default, it only runs on pushes to the main branch. If you do not have any dependencies to install, you can skip the steps where it installs Node and the dependencies.
 

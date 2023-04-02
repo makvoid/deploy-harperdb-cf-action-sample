@@ -32,7 +32,7 @@ jobs:
         with:
           admin_username: ${{ secrets.HDB_ADMIN_USERNAME }}
           admin_password: ${{ secrets.HDB_ADMIN_PASSWORD }}
-          hdb_endpoint: ${{ vars.HDB_ENDPOINT }}
-          project_name: ${{ vars.HDB_PROJECT }}
+          hdb_endpoint: ${{ secrets.HDB_ENDPOINT }}
+          project_name: ${{ secrets.HDB_PROJECT }}
           cf_directory: 'custom_functions'
           reject_unauthorized_certs: 'false'
